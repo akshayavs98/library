@@ -1,44 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book Shelf</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" async></script>
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="Book.js"></script>
+    <script type="module" src="script.js" async></script>
+  </head>
+  <body>
     <div>
-        <div class="header">
-             <p>Book Shelf</p>
-             
-        </div>
-        <div class="add-book">
-            <button id="add-book">New Book</button>
-         </div>
-         <div id="myModal" class="modal">
-            <div class="modal-content">
-             <form>
-                <label for="title">Title:
-                    <input type="text" name="title" id="title">
-                </label>
-                <label for="author">Author:
-                    <input type="text" name="author" id="author">
-                </label>
-                <label for="pages">No. of pages:
-                    <input type="text" name="pages" id="pages" pattern="[0,9]">
-                </label>
-                 <input type="checkbox" name="read" id="read">Read ?
-                   
-              <div><button type="submit" class="submit">Add Book</button>
-                <button type="button" id="close"class="submit">Close</button></div>
-                
-              </form>
-              
+      <div class="header">
+        <p>Book Shelf</p>
+      </div>
+      <div class="add-book">
+        <button id="new-book">New Book</button>
+      </div>
+      <div id="book-list" class="card-container"></div>
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <form id="book">
+            <label for="title"
+              >Title:
+              <input type="text" name="title" id="title" required />
+            </label>
+            <label for="author"
+              >Author:
+              <input type="text" name="author" id="author" required />
+            </label>
+            <label for="author"
+              >No.of pages:
+              <input
+                type="text"
+                name="pages"
+                id="pages"
+                required
+                pattern="[0-9]+"
+              />
+              <div id="page-error" class="error"></div>
+            </label>
+            <input type="checkbox" name="read" id="read" />Read ?
+
+            <div>
+              <button
+                type="submit"
+                class="submit"
+                id="add-book"
+                disabled
+                form="book"
+              >
+                Add Book
+              </button>
+              <button type="button" id="close" class="submit">Close</button>
             </div>
-          </div>
-      
+          </form>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
