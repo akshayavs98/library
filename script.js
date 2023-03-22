@@ -62,8 +62,10 @@ addBook.addEventListener("click", (event) => {
   const book = new Book(title.value, author.value, pages.value, isRead.checked);
   const content = `<h3> ${book.title} </h3>
         <h4> by ${book.author} </h4>
-        <p> ${book.pages} pages </p>
-        <p> ${book.isRead ? "Already Read" : "Not Read"} </p>`;
+        <p> ${book.pages} pages 
+        </p>
+        <p> ${book.isRead ? "Already Read" : "Not Read"}
+     </p>`;
 
   const container = document.getElementById("book-list");
 

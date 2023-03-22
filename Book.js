@@ -5,10 +5,6 @@ class Book{
         this.pages = pages;
         this.isRead = isRead
     }
-
-    changeStatus(){
-        this.isRead = !this.isRead;
-    }
    
 }
 
